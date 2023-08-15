@@ -7,19 +7,6 @@ import { graphCms } from "../lib/graphCms";
 
 const Header = () => {
   const [categoryLinks, setCategoryLinks] = useState([]);
-  // useEffect(async () => {
-  //   const { categories } = await graphCms.request(`
-  //   query MyQuery {
-  //     categories {
-  //       color {
-  //         css
-  //       }
-  //       name
-  //     }
-  //   }
-  //   `);
-  //   setCategoryLinks(categories);
-  // }, []);
 
   useEffect(() => {
     async function fetchData() {
