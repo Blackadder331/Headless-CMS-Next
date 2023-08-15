@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import "./styles/globals.css";
 import Wrapper from "./components/wrapper.js";
 import Header from "./components/header.js";
