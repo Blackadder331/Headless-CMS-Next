@@ -7,8 +7,13 @@ export default function Layout({ children }) {
   return (
     <html lang="en">
       
-      <h2>Test if this content shows up or not</h2>
-      <body>{children}</body>
+      
+      <body>
+      
+        {children}
+        
+        <h2>Test if this content shows up or not</h2>
+        </body>
       
     </html>
   );
