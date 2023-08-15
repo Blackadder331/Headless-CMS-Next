@@ -1,0 +1,30 @@
+.header {
+  border-bottom: 1px solid hsla(0, 0%, 100%, 0.244);
+  padding: 20px 0;
+}
+
+.logo {
+  font-size: 3rem;
+  font-family: "Helvetica", "Neue Montreal", sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header ul {
+  display: flex;
+}
+
+.header ul li {
+  margin-left: 30px;
+}
+
+.header ul li a {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 100;
+}
