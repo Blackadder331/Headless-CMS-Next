@@ -1,15 +1,46 @@
 "use client";
 import React from "react";
-import Header from "./components/header";
-import Wrapper from "./components/wrapper";
-import Layout from "./layout";
+import Post from "./components/post";
+import { useFetch } from "next/app";
+import { useState, useEffect } from "react";
+import { graphCms } from "./lib/graphCms";
 
-const index = () => {
+function Page() {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const { posts } = await graphCms.request(`
+        {
+          posts{
+            title
+            slug
+            thumbnail{
+              url
+            }
+            categories{
+              name
+              color{
+                css
+              }
+            }
+          }
+        }
+      `);
+      setPosts(posts);
+    }
+    fetchData();
+  }, []);
+
   return (
-    <div>
-      <h1>Hi</h1>
+    <div className="container">
+      <div>
+        {posts.map((post) => (
+          <Post key={post.slug} post={post} />
+        ))}
+      </div>
     </div>
   );
-};
+}
 
-export default index;
+export default Page;
