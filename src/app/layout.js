@@ -6,15 +6,12 @@ import Header from "./components/header.js";
 export default function Layout({ children }) {
   return (
     <html lang="en">
-      
-      
       <body>
-      
-        {children}
-        
-        <h2>Test if this content shows up or not</h2>
-        </body>
-      
+        <Wrapper>
+          {children}
+          <h2>Test if this content shows up or not</h2>
+        </Wrapper>
+      </body>
     </html>
   );
 }

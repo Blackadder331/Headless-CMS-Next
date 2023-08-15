@@ -6,11 +6,9 @@ import Layout from "./layout";
 
 const index = () => {
   return (
-    <Wrapper>
-      <div>
-        <h1>Hi</h1>
-      </div>
-    </Wrapper>
+    <div>
+      <h1>Hi</h1>
+    </div>
   );
 };
 
