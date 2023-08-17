@@ -7,26 +7,22 @@ const index = () => {
     <div>
       <h1>Title</h1>
       <div className="clipPath">
-        <svg xmlns="http://www.w3.org/2000/svg" style={{ width: '0', height: '0' }}>
-          <defs>
-            <clipPath id="clipPath">
-              <path d="m337.5,45h-99c-12.43,0-22.5-10.07-22.5-22.5h0c0-12.43-10.07-22.5-22.5-22.5H22.5C10.07,0,0,10.07,0,22.5v126c0,12.43,10.07,22.5,22.5,22.5s22.5,10.07,22.5,22.5h0c0,12.43,10.07,22.5,22.5,22.5h270c12.43,0,22.5-10.07,22.5-22.5v-126c0-12.43-10.07-22.5-22.5-22.5Z" />
-            </clipPath>
-          </defs>
-        </svg>
+  <svg viewBox="0 0 675 90">
+    <defs>
+      <clipPath id="clipPath">
+        <path d="m675,90h-198c-24.86,0-45-20.14-45-45h0c0-24.86-20.14-45-45-45H45C20.14,0,0,20.14,0,45v252c0,24.86,20.14,45,45,45s45,20.14,45,45h0c0,24.86,20.14,45,45,45h540c24.86,0,45-20.14,45-45v-252c0-24.86-20.14-45-45-45Z" />
+      </clipPath>
+    </defs>
+  </svg>
+  <div className="clipped">
+    <img src="/assets/house.jpg" alt="" />
+  </div>
+</div>
 
-        <div className="clipped">
-          <Image
-            src="/assets/house.jpg"
-            layout="fill"
-            style={{ objectFit: "cover" }}
-            alt=""
-          />
-        </div>
-      </div>
+
+      <div className="clipped"></div>
     </div>
   );
 };
-
 
 export default index;
