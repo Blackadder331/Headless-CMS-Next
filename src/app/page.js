@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import Post from "./components/post";
-import { useFetch } from "next/app";
 import { useState, useEffect } from "react";
 import { graphCms } from "./lib/graphCms";
 
