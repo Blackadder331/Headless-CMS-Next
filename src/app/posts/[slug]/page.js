@@ -1,5 +1,6 @@
 // "use client";
 import React from "react";
+import Wrapper from "../../components/wrapper";
 
 const index = () => {
   return (

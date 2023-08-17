@@ -34,7 +34,7 @@ function Page() {
 
   return (
     <div className="container">
-      <div>
+      <div className="main">
         {posts.map((post) => (
           <Post key={post.slug} post={post} />
         ))}

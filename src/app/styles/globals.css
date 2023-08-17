@@ -27,3 +27,10 @@ ul {
   margin: auto;
   background-color: #1c1c1c;
 }
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 3rem;
+  padding: 3rem 0;
+}
