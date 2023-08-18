@@ -20,7 +20,6 @@ const Post = ({ post }) => {
           style={{ backgroundColor: categories[0].color.css }}
         >
           <h3>{categories[0].name}</h3>
-          <div className={Style.effect}></div>
         </div>
       </div>
     </Link>

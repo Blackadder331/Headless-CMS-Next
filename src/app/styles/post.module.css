@@ -51,7 +51,9 @@
   font-family: Helvetica, "Neue Montreal", sans-serif;
 }
 
-.effect {
+
+.badge::after {
+  content: "";
   width: 20px;
   height: 20px;
   left: 0;
