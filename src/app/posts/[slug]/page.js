@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import parse from 'html-react-parser'
 import { graphCms } from "@/app/lib/graphCms";
 
 function Page({ params: { slug } }) {
@@ -34,7 +35,7 @@ function Page({ params: { slug } }) {
     <div className="container">
       <h1>{post.title}</h1>
       <small>{post.createdAt}</small>
-      {post.content.html}
+      {parse(post.content.html)}
       <div />
     </div>
   );
