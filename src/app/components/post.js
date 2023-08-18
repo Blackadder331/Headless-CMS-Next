@@ -7,7 +7,10 @@ const Post = ({ post }) => {
   const { title, thumbnail, slug, categories } = post;
   return (
     <Link href={`/posts/${slug}`}>
-      <div className={Style.post}>
+      <div
+        className={Style.post}
+        style={{ border: `1px solid ${categories[0].color.css}` }}
+      >
         <Image src={thumbnail.url} layout="fill" />
         <div className={Style.overlay}>
           <h1>{title}</h1>
@@ -17,6 +20,7 @@ const Post = ({ post }) => {
           style={{ backgroundColor: categories[0].color.css }}
         >
           <h3>{categories[0].name}</h3>
+          <div className={Style.effect}></div>
         </div>
       </div>
     </Link>
