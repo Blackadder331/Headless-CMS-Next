@@ -1,69 +1,43 @@
-// "use client";
-import React from "react";
-import Image from "next/image";
+"use client";
+import React, { useState, useEffect } from "react";
 import { graphCms } from "@/app/lib/graphCms";
 
-const index = () => {
+function Page({ params: { slug } }) {
+  const [post, setPost] = useState(null);
+
+  useEffect(() => {
+    async function fetchData() {
+      const { post } = await graphCms.request(
+        `
+        query SinglePost($slug: String!) {
+          post(where: { slug: $slug }) {
+            title
+            createdAt
+            content {
+              html
+            }
+          }
+        }
+        `,
+        { slug }
+      );
+      setPost(post);
+    }
+    fetchData();
+  }, [slug]);
+
+  if (!post) {
+    return <div>Loading...</div>;
+  }
+
   return (
-    <div>
-      <div className="container">
-        <h1>This is a single post</h1>
-      </div>
-      {/* <h1>Title</h1>
-      <div>
-        <div>
-          <Image
-            src="/assets/house.jpg"
-            width={350}
-            height={250}
-            alt=""
-            style={{ objectFit: "cover" }}
-          />
-        </div>
-      </div> */}
+    <div className="container">
+      <h1>{post.title}</h1>
+      <small>{post.createdAt}</small>
+      <p>{post.content.html}</p>
+      <div />
     </div>
   );
-};
-
-export default index;
-
-export async function getStaticPaths(params) {
-  const { posts } = await graphCms.request(`
-  {
-    posts{
-      slug
-    }
-  }
-  `);
-  const paths = posts.map(({ slug }) => ({ params: { slug } }));
-  return {
-    paths,
-    fallback: "blocking",
-  };
 }
 
-export async function getStaticProps({ params }) {
-  const { post } = await graphCms.request(
-    `
-  query SinglePost($slug:String!){
-    post(where:{slug:$slug}) {
-      title
-      createdAt
-      content{
-        html
-      }
-    }
-  }
-  `,
-    { slug: params.slug }
-  );
-
-console.log("hello single post");
-
-return {
-  props: {
-    post,
-    revalidate: 10,
-  },
-};
-}
+export default Page;
