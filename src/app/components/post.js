@@ -11,7 +11,13 @@ const Post = ({ post }) => {
         className={Style.post}
         style={{ border: `1px solid ${categories[0].color.css}` }}
       >
-        <Image src={thumbnail.url} layout="fill" />
+        <Image
+          src={thumbnail.url}
+          fill={true}
+          sizes="(max-width: 768px) 100vw"
+          priority={true}
+          alt=""
+        />
         <div className={Style.overlay}>
           <h1>{title}</h1>
         </div>

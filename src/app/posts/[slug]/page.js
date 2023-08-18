@@ -34,7 +34,7 @@ function Page({ params: { slug } }) {
     <div className="container">
       <h1>{post.title}</h1>
       <small>{post.createdAt}</small>
-      <p>{post.content.html}</p>
+      {post.content.html}
       <div />
     </div>
   );
