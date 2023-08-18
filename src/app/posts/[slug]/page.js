@@ -15,7 +15,7 @@ const index = () => {
     </defs>
   </svg>
   <div className="clipped">
-    <img src="/assets/house.jpg" alt="" />
+  <Image src="/assets/house.jpg" width={350} height={250} alt="" style={{ objectFit: 'cover' }} />
   </div>
 </div>
 

@@ -35,22 +35,11 @@ ul {
   padding: 3rem 0;
 }
 
-/* .clipped {
-  clip-path: url(#clipPath);
-  width: 100%; 
-  height: auto; 
-}
-.clipPath {
-  position: relative;
-  max-width: 80vw;
-  display: grid;
-  margin: auto;
-} */
-
+/* SVG CLIP PATH EXPERIMENT
 .clipPath {
   position: relative;
   width: 100%;
-  padding-bottom: 13.33%; /* Maintains the aspect ratio of the SVG */
+  padding-bottom: 13.33%; 
 }
 
 .clipPath svg {
@@ -70,3 +59,4 @@ ul {
   width: 100%;
   height: 100%;
 }
+*/
