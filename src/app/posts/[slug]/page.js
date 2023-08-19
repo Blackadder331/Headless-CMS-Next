@@ -1,7 +1,17 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import parse from 'html-react-parser'
+import parse from "html-react-parser";
 import { graphCms } from "@/app/lib/graphCms";
+import Style from "../../styles/singlepost.module.css";
+
+const formatDate = (timestamp) => {
+  const date = new Date(timestamp);
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+};
 
 function Page({ params: { slug } }) {
   const [post, setPost] = useState(null);
@@ -32,10 +42,13 @@ function Page({ params: { slug } }) {
   }
 
   return (
-    <div className="container">
-      <h1>{post.title}</h1>
-      <small>{post.createdAt}</small>
-      {parse(post.content.html)}
+    <div className="container ">
+      <div className={Style.singlePost}>
+        <h1 className={Style.title}>{post.title}</h1>
+        <small className={Style.date}>{formatDate(post.createdAt)}</small>{" "}
+        <div className={Style.formatter}>{parse(post.content.html)}</div>
+      </div>
+
       <div />
     </div>
   );

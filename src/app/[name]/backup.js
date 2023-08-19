@@ -1,12 +1,10 @@
-"use client";
 import React, { useState, useEffect } from "react";
 import { graphCms } from "../lib/graphCms";
 import Post from "../components/post";
 
 function CategoryPage({ params }) {
   const [posts, setPosts] = useState(null);
-  const name = decodeURIComponent(params.name);
-
+  
   useEffect(() => {
     async function fetchData() {
       const { posts } = await graphCms.request(
@@ -27,12 +25,12 @@ function CategoryPage({ params }) {
           }
         }
         `,
-        { name }
+        { name: params.name }
       );
       setPosts(posts);
     }
     fetchData();
-  }, [name]);
+  }, [params.name]);
 
   if (!posts) {
     return <div>Loading...</div>;
@@ -50,4 +48,3 @@ function CategoryPage({ params }) {
 }
 
 export default CategoryPage;
-

@@ -1,0 +1,48 @@
+.singlePost {
+  padding: 30px 0;
+}
+
+.title {
+  color: #5fee52;
+  font-size: 3rem;
+  text-transform: capitalize;
+  margin: 0 15px 0 0;
+}
+
+.date {
+  color: gray;
+  text-transform: uppercase;
+  margin: 30px 0 30px 0;
+  font-weight: 100;
+  margin-bottom: 5rem;
+}
+
+.formatter {
+  background-color: #2f2f2f;
+  padding: 30px;
+  border-radius: 10px;
+  margin: 30px 0;
+}
+
+.formatter img {
+  max-width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  padding: 30px 0;
+}
+
+.formatter h1,
+.formatter h2,
+.formatter h3,
+.formatter h4 {
+  margin-bottom: 20px;
+}
+
+.formatter p {
+  margin-bottom: 10px;
+}
+
+.formatter a {
+  text-decoration: underline;
+  color: #5fee52;
+}
