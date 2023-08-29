@@ -4,7 +4,7 @@
 }
 
 .logo {
-  font-size: 3rem;
+  font-size: 1.5rem;
   font-family: "Helvetica", "Neue Montreal", sans-serif;
 }
 
@@ -14,17 +14,40 @@
   align-items: center;
 }
 
-.header ul {
+.header .nav {
+  /* display: flex; */
+  flex-direction: row;
+  width: 70%;
+}
+.nav ol {
   display: flex;
+  justify-content: flex-end;
 }
 
-.header ul li {
-  margin-left: 30px;
+.header ol li {
+  margin-left: 3.5rem;
+  padding-left: 0.25rem;
+  list-style-type: decimal-leading-zero;
 }
 
-.header ul li a {
-  font-size: 0.875rem;
+.header ol li::marker {
+  font-size: 13px;
+  font-family: "Neue Montreal";
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.header ol li a {
+  font-size: 16px;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 4px;
   font-weight: 100;
+}
+
+.header ol li a:hover {
+  text-decoration-style: wavy;
+  text-decoration-line: underline overline;
+  text-decoration-skip-ink: auto;
+  text-underline-offset: 4px;
+  border-bottom: 5px solid red;
 }

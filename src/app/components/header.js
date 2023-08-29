@@ -30,15 +30,19 @@ const Header = () => {
         <Link href="/" className={Style.logo}>
           Sharp Design Corp.
         </Link>
-        <ul>
+        <nav className={Style.nav}>
+        <ol className={Style.navLinks}>
           {categoryLinks.map((link) => (
             <li key={link.name}>
-              <Link href={`/${link.name}`} style={{ color: link.color.css }}>
+              <Link
+                href={`/${link.name}`} /* style={{ color: link.color.css }} */
+              >
                 {link.name}
               </Link>
             </li>
           ))}
-        </ul>
+        </ol>
+        </nav>
       </div>
     </header>
   );
