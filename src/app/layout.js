@@ -9,7 +9,7 @@ export default function Layout({ children }) {
       <body>
         <Wrapper>
           {children}
-          <h2>Test if this content shows up or not</h2>
+          {/* <h2>Test if this content shows up or not</h2> */}
         </Wrapper>
       </body>
     </html>
