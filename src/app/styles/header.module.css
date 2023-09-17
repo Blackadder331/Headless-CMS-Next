@@ -5,7 +5,8 @@
 
 .logo {
   font-size: 1.5rem;
-  font-family: "Helvetica", "Neue Montreal", sans-serif;
+  font-family: "Neue Montreal", "Helvetica", sans-serif;
+  font-weight: 800;
 }
 
 .container {
@@ -19,6 +20,7 @@
   flex-direction: row;
   width: 70%;
 }
+
 .nav ol {
   display: flex;
   justify-content: flex-end;
@@ -40,13 +42,41 @@
 .header ol li a {
   font-size: 16px;
   text-transform: uppercase;
-  letter-spacing: 4px;
-  font-weight: 100;
+  letter-spacing: 1.5px;
+  font-weight: 400;
 }
 
 .header ol li a:hover {
-  text-decoration-style: wavy;
-  text-decoration-line: underline overline;
+  text-decoration-style: dashed;
+  text-decoration-line: underline;
   text-decoration-skip-ink: auto;
-  text-underline-offset: 4px;
+  text-underline-offset: 8px;
+}
+
+.menuButton {
+  display: none; /* initially hidden */
+}
+
+.showMenu {
+  display: block;
+}
+
+.mobileNav {
+  position: absolute;
+  top: 70px; /* Position it right below the header */
+  left: 0;
+  width: 100%;
+  background-color: rgb(49, 49, 49);
+  z-index: 999;
+  padding: 15vh 0;
+}
+
+/* MEDIA query  for smaller laptops down to mobile */
+@media (max-width: 1200px) {
+  .nav {
+    display: none;
+  }
+  .menuButton {
+    display: block;
+  }
 }

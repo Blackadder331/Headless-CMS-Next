@@ -1,5 +1,5 @@
 import React from "react";
-//function that adds two random nunmber
+//function that adds two random number
 const AddTwoNumbers = () => {
   const num1 = Math.floor(Math.random() * 10);
   const num2 = Math.floor(Math.random() * 10);

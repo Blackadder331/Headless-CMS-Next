@@ -3,7 +3,7 @@
 }
 
 .title {
-  color: #5fee52;
+  color: #eee;
   font-size: 3rem;
   text-transform: capitalize;
   margin: 0 15px 0 0;
@@ -13,8 +13,9 @@
   color: gray;
   text-transform: uppercase;
   margin: 30px 0 30px 0;
-  font-weight: 100;
+  font-weight: 400;
   margin-bottom: 5rem;
+  letter-spacing: 0.5px;
 }
 
 .formatter {
@@ -44,5 +45,5 @@
 
 .formatter a {
   text-decoration: underline;
-  color: #5fee52;
+  color: #6ffe01;
 }

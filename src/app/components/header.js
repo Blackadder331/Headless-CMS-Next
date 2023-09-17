@@ -24,26 +24,51 @@ const Header = () => {
     }
     fetchData();
   }, []);
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  console.log("Is menu open:", isMenuOpen); // Debugging line
+  
   return (
     <header className={Style.header}>
       <div className={`container ${Style.container}`}>
         <Link href="/" className={Style.logo}>
           Sharp Design Corp.
         </Link>
-        <nav className={Style.nav}>
-        <ol className={Style.navLinks}>
-          {categoryLinks.map((link) => (
-            <li key={link.name}>
-              <Link
-                href={`/${link.name}`} /* style={{ color: link.color.css }} */
-              >
-                {link.name}
-              </Link>
-            </li>
-          ))}
-        </ol>
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className={Style.menuButton}
+        >
+          ☰
+        </button>
+
+
+       <nav className={Style.nav}>
+          <ol className={Style.navLinks}>
+            {categoryLinks.map((link) => (
+              <li key={link.name}>
+                <Link href={`/${link.name}`}>
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ol>
         </nav>
+
+        {isMenuOpen && (
+          <div className={Style.mobileNav}>
+            <ol>
+              {categoryLinks.map((link) => (
+                <li key={link.name}>
+                  <Link href={`/${link.name}`} /* style={{ color: link.color.css }} */>
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ol>
+          </div>
+        )}
       </div>
+               
     </header>
   );
 };
